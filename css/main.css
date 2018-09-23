@@ -789,7 +789,7 @@ a.selected {
     }
 
     .sing {
-        max-width: 20%;
+        max-width: 30%;
         margin-bottom: 3rem !important;
     }
 
@@ -843,7 +843,7 @@ a.selected {
 
     .sing {
         margin-bottom: 3rem !important;
-        max-width: 25%;
+        max-width: 35%;
     }
 
     .card-gallery.image-gallery {
@@ -880,7 +880,7 @@ a.selected {
 
     .sing {
         margin-bottom: 3rem !important;
-        max-width: 30%;
+        max-width: 40%;
     }
 
     section.about .block-content.text-md-right,
