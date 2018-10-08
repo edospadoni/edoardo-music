@@ -454,6 +454,11 @@ h1.large {
     -webkit-transform: scale(0.95);
 }
 
+.desc-parag {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
 /* End hero Section*/
 
 /* Discography section*/
