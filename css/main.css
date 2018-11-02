@@ -577,21 +577,15 @@ a.selected {
 
 /*Gallery section*/
 
-.card-gallery.image-gallery {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-gap: .75rem;
-    -moz-column-gap: .75rem;
-    column-gap: .75rem;
-}
-
 .card-gallery.image-gallery>a>img {
     margin-bottom: .35em;
 }
 
+.card-gallery.image-gallery>a>video {
+    margin-bottom: .35em;
+}
+
 .card-gallery>* {
-    display: inline-block;
     width: 100%;
     overflow: hidden;
 }
@@ -740,10 +734,18 @@ a.selected {
     .card-gallery.image-gallery>a>img {
         margin-bottom: .75em;
     }
+
+    .card-gallery.image-gallery>a>video {
+        margin-bottom: .75em;
+    }
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
     .card-gallery.image-gallery>a>img {
+        margin-bottom: .75em;
+    }
+
+    .card-gallery.image-gallery>a>video {
         margin-bottom: .75em;
     }
 
@@ -766,6 +768,10 @@ a.selected {
     }
 
     .card-gallery.image-gallery>a>img {
+        margin-bottom: .75em;
+    }
+
+    .card-gallery.image-gallery>a>video {
         margin-bottom: .75em;
     }
 
@@ -799,6 +805,10 @@ a.selected {
     }
 
     .card-gallery.image-gallery>a>img {
+        margin-bottom: .75em;
+    }
+
+    .card-gallery.image-gallery>a>video {
         margin-bottom: .75em;
     }
 
@@ -851,12 +861,11 @@ a.selected {
         max-width: 35%;
     }
 
-    .card-gallery.image-gallery {
-        column-count: 1;
-        column-gap: 0rem;
+    .card-gallery.image-gallery>a>img {
+        margin-bottom: 1rem;
     }
 
-    .card-gallery.image-gallery>a>img {
+    .card-gallery.image-gallery>a>video {
         margin-bottom: 1rem;
     }
 }
@@ -893,18 +902,34 @@ a.selected {
         margin-bottom: 1.875em;
     }
 
-    .card-gallery.image-gallery {
-        column-count: 1;
-        column-gap: 0rem;
+    .card-gallery.image-gallery>a>img {
+        margin-bottom: 1rem;
     }
 
-    .card-gallery.image-gallery>a>img {
+    .card-gallery.image-gallery>a>video {
         margin-bottom: 1rem;
     }
 
     .height-70 {
         height: 100vh;
     }
+}
+
+.card-gallery.image-gallery>a {
+    max-height: 300px;
+    margin-bottom: 5px !important;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+.card-gallery.image-gallery>a>video {
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.card-gallery.image-gallery>a>img {
+    min-width: 300px;
+    min-height: 300px;
 }
 
 /*End media queries*/

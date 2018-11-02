@@ -109,33 +109,45 @@
         n = e(".main-nav ul");
     n.height();
     e(o).on("click", function () {
-        return e(".toggle-mobile-but").toggleClass("active"), n.slideToggle(), e(".main-nav li a").addClass("mobile"), !1
-    }), e(window).resize(function () {
-        e(window).width() > 320 && n.is(":hidden") && (n.removeAttr("style"), e(".main-nav li a").removeClass("mobile"))
-    }), e(".main-nav li a").on("click", function () {
-        e(this).hasClass("mobile") && (n.slideToggle(), e(".toggle-mobile-but").toggleClass("active"))
-    }), e(".background-img").each(function () {
-        var i = e(this).children("img").attr("src");
-        e(this).css("background-image", 'url("' + i + '")').css("background-position", "initial")
-    }), e(".popup-image").magnificPopup({
-        type: "image",
-        fixedContentPos: !1,
-        fixedBgPos: !1,
-        mainClass: "mfp-no-margins mfp-with-zoom",
-        image: {
-            verticalFit: !0
-        },
-        zoom: {
-            enabled: !0,
-            duration: 300
-        }
-    });
+            return e(".toggle-mobile-but").toggleClass("active"), n.slideToggle(), e(".main-nav li a").addClass("mobile"), !1
+        }), e(window).resize(function () {
+            e(window).width() > 320 && n.is(":hidden") && (n.removeAttr("style"), e(".main-nav li a").removeClass("mobile"))
+        }), e(".main-nav li a").on("click", function () {
+            e(this).hasClass("mobile") && (n.slideToggle(), e(".toggle-mobile-but").toggleClass("active"))
+        }), e(".background-img").each(function () {
+            var i = e(this).children("img").attr("src");
+            e(this).css("background-image", 'url("' + i + '")').css("background-position", "initial")
+        }), e(".popup-image").magnificPopup({
+            type: "image",
+            fixedContentPos: !1,
+            fixedBgPos: !1,
+            mainClass: "mfp-no-margins mfp-with-zoom",
+            image: {
+                verticalFit: !0
+            },
+            zoom: {
+                enabled: !0,
+                duration: 300
+            }
+        }),
+        e(".popup-video").magnificPopup({
+            disableOn: 700,
+            type: "iframe",
+            mainClass: "mfp-fade",
+            removalDelay: 160,
+            preloader: !1,
+            fixedContentPos: !1
+        });
     e.get("https://wt-3124fd8f88a61e57a4cfca31da4ab788-0.sandbox.auth0-extend.com/instagram-photos", function (data) {
-        if (data.photos.length > 0) {
-            for (var p in data.photos) {
-                var photo = data.photos[p];
-                var htmlPhoto = '<a href="' + photo + '" class="popup-image mb-0"><img class="animated" alt="" src="' + photo + '"></a>'
-                e('.card-gallery.image-gallery').append(htmlPhoto);
+        if (data.feeds.length > 0) {
+            console.log(data.obj)
+            for (var p in data.feeds) {
+                var feed = data.feeds[p];
+                var htmlFeed = '<a href="' + feed.url + '" class="popup-' + feed.type + ' mb-0 col-sm-4">' +
+                    '<' + (feed.type == 'image' ? 'img' : 'video') + ' class="animated" alt="" src="' + feed.url + '">' +
+                    '</a>'
+                console.log(htmlFeed)
+                e('.card-gallery.image-gallery').append(htmlFeed);
             }
             e(".popup-image").magnificPopup({
                 type: "image",
@@ -150,8 +162,16 @@
                     duration: 300
                 }
             });
+            e(".popup-video").magnificPopup({
+                disableOn: 700,
+                type: "iframe",
+                mainClass: "mfp-fade",
+                removalDelay: 160,
+                preloader: !1,
+                fixedContentPos: !1
+            })
         } else {
-            e('.card-gallery.image-gallery').append("<p>No photos found.</p>")
+            e('.card-gallery.image-gallery').append('<p class="col-sm-12">No photos found.</p>')
             e('.card-gallery.image-gallery').removeClass('card-gallery')
         }
 
