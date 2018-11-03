@@ -140,15 +140,16 @@
         });
     e.get("https://wt-3124fd8f88a61e57a4cfca31da4ab788-0.sandbox.auth0-extend.com/instagram-photos", function (data) {
         if (data.feeds.length > 0) {
-            console.log(data.obj)
             for (var p in data.feeds) {
                 var feed = data.feeds[p];
-                var htmlFeed = '<a href="' + feed.url + '" class="popup-' + feed.type + ' mb-0 col-sm-4">' +
-                    '<' + (feed.type == 'image' ? 'img' : 'video') + ' class="animated" alt="" src="' + feed.url + '">' +
-                    '</a>'
-                console.log(htmlFeed)
-                e('.card-gallery.image-gallery').append(htmlFeed);
+                var htmlFeed = '<img style="background-image: url(\'' +
+                    feed.images.standard_resolution.url +
+                    '\'" href="' + (feed.type == 'video' ? feed.videos.standard_resolution.url : feed.images.standard_resolution.url) +
+                    '" class="popup-' + feed.type + ' mb-0 square animated">' +
+                    '</img>'
+                e('.feed-container').append(htmlFeed);
             }
+
             e(".popup-image").magnificPopup({
                 type: "image",
                 fixedContentPos: !1,
@@ -163,7 +164,6 @@
                 }
             });
             e(".popup-video").magnificPopup({
-                disableOn: 700,
                 type: "iframe",
                 mainClass: "mfp-fade",
                 removalDelay: 160,
@@ -171,8 +171,7 @@
                 fixedContentPos: !1
             })
         } else {
-            e('.card-gallery.image-gallery').append('<p class="col-sm-12">No photos found.</p>')
-            e('.card-gallery.image-gallery').removeClass('card-gallery')
+            e('.feed-container').append('<p class="col-sm-12">No photos found.</p>')
         }
 
         // hide loader
