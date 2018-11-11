@@ -956,6 +956,14 @@ a.selected {
     margin-top: 50px;
 }
 
+.wrap-on {
+    z-index: 1;
+}
+
+.last-row {
+    margin-bottom: 50px;
+}
+
 @media screen and (max-width: 992px) {
     .album-link-img {
         margin: auto;
@@ -966,7 +974,7 @@ a.selected {
         right: 0;
         width: 40%;
         margin-bottom: 30px;
-        margin-top: 0px;
+        margin-top: 50px;
     }
 }
 
@@ -974,6 +982,7 @@ a.selected {
     .link-ext {
         font-size: 40px;
     }
+
     .album-link-img {
         margin: auto;
         position: relative;
@@ -983,7 +992,7 @@ a.selected {
         right: 0;
         width: 50%;
         margin-bottom: 30px;
-        margin-top: 0px;
+        margin-top: 50px;
     }
 }
 
