@@ -3,6 +3,8 @@
     e(window).on("load", function () {
         e(".loader-inner").fadeOut(), e(".loader").delay(200).fadeOut("slow")
 
+        $('#current-date').text(new Date().getFullYear())
+
         // init particles in background
         particlesJS("particles-js", {
             "particles": {
