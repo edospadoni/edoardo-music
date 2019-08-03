@@ -313,7 +313,7 @@ function echoes() {
       return destination
         .clone()
         .subtract(this.position)
-        .multiply(0.0005);
+        .multiply(window.innerWidth < 768 ? 0.00075 :  0.00015);
     }
 
     getNearest(boids) {
