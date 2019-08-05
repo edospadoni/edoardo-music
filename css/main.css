@@ -159,6 +159,7 @@ section.hero {
     background: #161616;
     position: absolute;
     top: 0px;
+    opacity: 0.75;
 }
 
 .background-img img {
