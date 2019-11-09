@@ -986,6 +986,14 @@ a.selected {
     border-color: rgba(255, 255, 255, .07);
 }
 
+.disco-history:hover {
+    opacity: 75%;
+}
+
+.large-size {
+    font-size: 24px;
+}
+
 @media screen and (max-width: 992px) {
     .album-link-img {
         margin: auto;

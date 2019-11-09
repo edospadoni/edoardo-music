@@ -136,12 +136,14 @@ function vitae() {
 
 function echoes() {
   var parent = document.getElementById("cover-parent");
-  var elem = document.createElement("canvas");
+  var elem = document.createElement("div");
   elem.setAttribute("id", "particles-js");
   elem.setAttribute("class", "flex-active-slide particles-cover");
   parent.appendChild(elem);
 
-  const TAU = Math.PI * 2;
+  particlesJS("particles-js", particleModes["echoes"]);
+
+  /* const TAU = Math.PI * 2;
 
   const distanceBetween = (v1, v2) => {
     var x = v2.x - v1.x;
@@ -518,7 +520,7 @@ function echoes() {
   });
   document.body.addEventListener("touchend", () => {
     scatter = false;
-  });
+  });*/
 }
 
 !(function(e) {
