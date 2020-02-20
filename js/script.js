@@ -124,26 +124,8 @@ var particleModes = {
   }
 };
 
-function vitae() {
-  var parent = document.getElementById("cover-parent");
-  var elem = document.createElement("div");
-  elem.setAttribute("id", "particles-js");
-  elem.setAttribute("class", "flex-active-slide particles-cover");
-  parent.appendChild(elem);
-
-  particlesJS("particles-js", particleModes["vitae"]);
-}
-
-function echoes() {
-  var parent = document.getElementById("cover-parent");
-  var elem = document.createElement("div");
-  elem.setAttribute("id", "particles-js");
-  elem.setAttribute("class", "flex-active-slide particles-cover");
-  parent.appendChild(elem);
-
-  particlesJS("particles-js", particleModes["echoes"]);
-
-  /* const TAU = Math.PI * 2;
+function flutterMode() {
+  const TAU = Math.PI * 2;
 
   const distanceBetween = (v1, v2) => {
     var x = v2.x - v1.x;
@@ -315,7 +297,7 @@ function echoes() {
       return destination
         .clone()
         .subtract(this.position)
-        .multiply(window.innerWidth < 768 ? 0.00075 :  0.00015);
+        .multiply(window.innerWidth < 768 ? 0.00075 : 0.00015);
     }
 
     getNearest(boids) {
@@ -520,7 +502,35 @@ function echoes() {
   });
   document.body.addEventListener("touchend", () => {
     scatter = false;
-  });*/
+  });
+}
+
+function vitae() {
+  var parent = document.getElementById("cover-parent");
+  var elem = document.createElement("div");
+  elem.setAttribute("id", "particles-js");
+  elem.setAttribute("class", "flex-active-slide particles-cover");
+  parent.appendChild(elem);
+
+  particlesJS("particles-js", particleModes["vitae"]);
+}
+
+function echoes() {
+  var parent = document.getElementById("cover-parent");
+
+  // particles.js case
+  var elem = document.createElement("div");
+  elem.setAttribute("id", "particles-js");
+  elem.setAttribute("class", "flex-active-slide particles-cover");
+  parent.appendChild(elem);
+  particlesJS("particles-js", particleModes["echoes"]);
+
+  // color case
+  /* var elem = document.createElement("canvas");
+  elem.setAttribute("id", "particles-js");
+  elem.setAttribute("class", "flex-active-slide particles-cover");
+  parent.appendChild(elem);
+  flutterMode() */
 }
 
 !(function(e) {
