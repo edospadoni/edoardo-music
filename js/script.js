@@ -519,18 +519,18 @@ function echoes() {
   var parent = document.getElementById("cover-parent");
 
   // particles.js case
-  var elem = document.createElement("div");
-  elem.setAttribute("id", "particles-js");
-  elem.setAttribute("class", "flex-active-slide particles-cover");
-  parent.appendChild(elem);
-  particlesJS("particles-js", particleModes["echoes"]);
+  // var elem = document.createElement("div");
+  // elem.setAttribute("id", "particles-js");
+  // elem.setAttribute("class", "flex-active-slide particles-cover");
+  // parent.appendChild(elem);
+  // particlesJS("particles-js", particleModes["echoes"]);
 
   // color case
-  /* var elem = document.createElement("canvas");
+  var elem = document.createElement("canvas");
   elem.setAttribute("id", "particles-js");
   elem.setAttribute("class", "flex-active-slide particles-cover");
   parent.appendChild(elem);
-  flutterMode() */
+  flutterMode()
 }
 
 !(function(e) {
