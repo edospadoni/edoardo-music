@@ -557,6 +557,10 @@ function echoes() {
       case "/e/":
         particlesJS("particles-js", particleModes["echoes"]);
         break;
+      
+      case "/w/":
+        particlesJS("particles-js", particleModes["echoes"]);
+        break;
     }
   }),
     e("a.scroll").smoothScroll({
