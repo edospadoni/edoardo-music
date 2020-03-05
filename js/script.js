@@ -531,6 +531,19 @@ function echoes() {
   elem.setAttribute("class", "flex-active-slide particles-cover");
   parent.appendChild(elem);
   flutterMode()
+
+  // record canvas
+  /* const canvas = document.getElementById('particles-js');
+  const recorder = new CanvasRecorder(canvas);
+
+  setTimeout(function() {
+    recorder.start();
+  },250)
+
+  setTimeout(function() {
+    recorder.stop();
+    recorder.save('canvas.webm');
+  },10250) */
 }
 
 !(function(e) {
