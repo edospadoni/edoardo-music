@@ -555,7 +555,9 @@ function echoes() {
         .fadeOut("slow");
 
     // update copyright date
-    $("#current-date").text(new Date().getFullYear());
+    setTimeout(function() {
+      $("#current-date").text(new Date().getFullYear());
+    }, 500)
 
     // init particles in background
     var pathname = window.location.pathname;
